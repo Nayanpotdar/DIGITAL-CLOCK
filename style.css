@@ -207,7 +207,7 @@
     height: 350px;
   }
   
- @media (min-width: 340px) and (max-width: 545px) {
+ @media (min-width: 250px) and (max-width: 720px) {
     .main {
         flex-direction: column
       width: 155%;
