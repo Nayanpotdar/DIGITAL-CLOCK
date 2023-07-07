@@ -209,6 +209,7 @@
   
  @media (min-width: 340px) and (max-width: 545px) {
     .main {
+        flex-direction: column
       width: 155%;
     }
     .box1 {
