@@ -207,24 +207,24 @@
     height: 350px;
   }
   
-  @media (min-width: 340px) and (max-width: 545px) {
+ @media (min-width: 340px) and (max-width: 545px) {
     .main {
-      width: 170%;
+      width: 155%;
     }
     .box1 {
       top: -730px;
     }
     .msg {
       position: relative;
-      top: 250px;
+      top: 230px;
     }
     .set {
       position: relative;
-      top: 250px;
+      top: 230px;
     }
     .gm {
       position: relative;
-      top: 240px;
+      top: 220px;
     }
     .celen {
       position: relative;
@@ -232,11 +232,11 @@
     }
     .b {
       position: absolute;
-      top: 275px;
+      top: 255px;
     }
     .bc {
       position: absolute;
-      top: 311px;
+      top: 290px;
     }
     .box5 {
       position: relative;
