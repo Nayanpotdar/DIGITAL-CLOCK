@@ -207,40 +207,79 @@
     height: 350px;
   }
   
- @media (min-width: 250px) and (max-width: 720px) {
+ @media (min-width: 340px) and (max-width: 667px) {
     .main {
-        flex-direction: column
-      width: 155%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .box1 {
+      width: 350px;
+      height: 100px;
       top: -730px;
+      left: -110px;
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
     }
     .msg {
+      width:200px;
+      height: 100px;
       position: relative;
-      top: 230px;
+      top: 190px;
+      text-align: center;
+      position: relative;
     }
     .set {
+      width: 110px;
+      height: 75px;
       position: relative;
-      top: 230px;
+      top: 190px;
     }
-    .gm {
-      position: relative;
-      top: 220px;
-    }
+   #m{
+    width: 320px;
+    height: auto;
+    position: relative;
+    top: 175px;
+   }
     .celen {
+      font-size: auto;
+      width: 350px;
+      height: 600px;
       position: relative;
-      top: 210px;
+      top: 150px;
     }
+    .box4{
+      width: 330px;
+      height: 70px;
+      top: 70px;
+      left: -110px;
+      text-align: center;
+      position: relative;
+      
+    }
+  
     .b {
+      width: 350px;
+      height: auto;
       position: absolute;
-      top: 255px;
+      top: 200px;
     }
     .bc {
+      width: 350px;
+      height: auto;
       position: absolute;
-      top: 290px;
+      top: 260px;
     }
     .box5 {
+      width: 330px;
+      height: auto;
+      top: -80px;
+      left:-120px;
+      justify-content: center;
       position: relative;
-      bottom: 34px;
+      bottom: 10px;
     }
   }
