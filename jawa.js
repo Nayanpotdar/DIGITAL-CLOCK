@@ -86,15 +86,15 @@ function setalarm(){
     }
     else if(parseInt(morningTime[1].value) === hrs){
         morningText.innerHTML = "Good Afternoon!! Have your Diet";
-        morningImg[0].src = "./mrng.png"
+        morningImg[0].src = "./luch.png"
     }
     else if(parseInt(morningTime[2].value) === hrs){
         morningText.innerHTML = "Good Evening!! Have Some Coffee"
-        morningImg[0].src = "./luch.png"
+        morningImg[0].src = "./ge.jpg"
     }
     else if(parseInt(morningTime[3].value) === hrs){
         morningText.innerHTML = "Good Night!! Sleep well"
-        morningImg[0].src = "./goodevening.png"
+        morningImg[0].src = "./night.png"
     }
 
 }
