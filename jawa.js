@@ -1,99 +1,100 @@
-let hr = document.getElementsByClassName("js1");
-let kri = document.getElementById("grab");
-let tmzone = document.getElementById("am");
-function clock() {
-  let a = new Date();
-  let hours = a.getHours();
-  let minut = a.getMinutes();
-  let second = a.getSeconds();
-  let value = `${hours}:${minut}:${second}`;
-  if (hours >= 6 && hours < 12) {
-    kri.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
-  } else if (hours >= 12 && hours < 15) {
-    kri.innerText = "LET'S HAVE SOME LUNCH !!";
-  } else if (hours >= 15 && hours < 19) {
-    kri.innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
-  } else {
-    kri.innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
-  }
-  if (hours > 12) {
-    tmzone.innerText = "PM";
-  } else {
-    tmzone.innerText = "AM";
-  }
-  if (hours > 12) {
-    hours -= 12;
-  }
-  if (hours < 10) {
-    hours = "0" + hours;
-  }
-  if (minut < 10) {
-    minut = "0" + minut;
-  }
-  if (second < 10) {
-    second = "0" + second;
-  }
 
-  console.log(value);
-  let hrs = `${hours}`;
-  hr[0].innerHTML = hrs;
-  let mnt = `${minut}`;
-  hr[1].innerHTML = mnt;
-  let sec = `${second}`;
-  hr[2].innerHTML = sec;
+let one = document.getElementsByClassName("clock-item")
+let changeTime = document.getElementsByClassName("one")
+function clockstart(){
+    let AMPM = "";
+    let time = new Date();
+    let hrs = time.getHours();
+    let mins = time.getMinutes();
+    let secs = time.getSeconds();
+
+
+    if (hrs < 12){
+        changeTime[0].innerHTML = "GRAB SOME HEALTY PART"
+    }
+    else if(hrs > 12 && hrs <= 16){
+        changeTime[0].innerHTML = "LET'S HAVE LUNCH" 
+    }
+    else if (hrs >= 16 && hrs <= 20){
+        changeTime[0].innerHTML = "STOP YAWNING, TEA.."
+    }
+    else{
+        changeTime[0].innerHTML = "Good Night Take Care!"
+    };
+  
+    if (hrs >12){
+        hrs -= 12
+        AMPM = "PM"
+    }
+    else{
+        AMPM = "AM"
+    };
+// ..................greeting.........
+ hrs=hrs<10 ? "0" + hrs : hrs;
+ mins=mins<10 ? "0" + mins : mins;
+ secs=secs<10 ? "0" + secs : secs;
+
+
+   
+    one[0].innerHTML = `${hrs}`
+    one[1].innerHTML = `${mins}`
+    one[2].innerHTML = `${secs}`
+    one[3].innerHTML = `${AMPM}`
 }
+// clockstart();
+
 setInterval(() => {
-  clock();
+    clockstart();
 }, 1000);
 
-let s1 = document.getElementById("sel1");
-let s2 = document.getElementById("sel2");
-let s3 = document.getElementById("sel3");
-let s4 = document.getElementById("sel4");
-let gdm = document.getElementById("m");
-let grb = document.getElementById("grab");
-let i = document.getElementsByClassName("box5");
-let setalarm = document.getElementById("setalrm");
 
-setalarm.addEventListener("click", () => {
-  setalarm.innerHTML = "breakfast";
-  let a = new Date();
-  let hours = a.getHours();
-  if (hours === parseInt(s1.value)) {
-    console.log(s1.value);
-    gdm.innerHTML = "GOOD MORNING!! WAKE UP !!";
 
-    i[0].style.backgroundImage = "url('mrng.png')";
-  } else if (hours === parseInt(s2.value)) {
-    console.log(s2.value);
-    gdm.innerHTML = "GOOD AFTERNOON !! TAKE SOME SLEEP ";
+let morningTime = document.querySelectorAll('select')
+let morningText = document.getElementById('greet')
+let morningImg = document.getElementsByClassName('container1')
+let morningUpdate  = document.getElementsByClassName('routinetext')
 
-    i[0].style.backgroundImage = "url('luch.png')";
-  } else if (hours === parseInt(s3.value)) {
-    console.log(s3.value);
-    gdm.innerHTML = "GOOD EVENING !! ";
 
-    i[0].style.backgroundImage = "url('goodevening.png')";
-  } else if (hours === parseInt(s4.value)) {
-    console.log(s4.value);
-    gdm.innerHTML = "GOOD NIGHT !!";
+function setalarm(){
+    let time = new Date();
+    let hrs = time.getHours();
+    console.log(morningTime[0]);
+    console.log(morningTime[1].value);
+    console.log(morningTime[2].value);
+    console.log(morningTime[3].value);
+    console.log(hrs);
 
-    i[0].style.backgroundImage = "url('./GOODNIGHT.png')";
-  }
+    let indexMorning = morningTime[0].selectedIndex;
+    let indexMorning1 = morningTime[1].selectedIndex;
+    let indexMorning2 = morningTime[2].selectedIndex;
+    let indexMorning3 = morningTime[3].selectedIndex;
+    // console.log(indexMorning);
+    let item = morningTime[0].options[indexMorning];
+    let item1 = morningTime[1].options[indexMorning1];
+    let item2 = morningTime[2].options[indexMorning2];
+    let item3 = morningTime[3].options[indexMorning3];
+    // console.log(item);
+    morningUpdate[0].innerHTML = "Wake up Time:"+ item.textContent
+    morningUpdate[1].innerHTML = "Lunch Time:"+ item1.textContent
+    morningUpdate[2].innerHTML = "Nap Time:"+ item2.textContent
+    morningUpdate[3].innerHTML = "Night Time:"+ item3.textContent
 
-  let morningtext = sel1.options[sel1.selectedIndex].textContent;
-  let morning = document.getElementById("chart1");
-  morning.textContent = morningtext;
+    
+    if(parseInt(morningTime[0].value) === hrs){
+        morningText.innerHTML = "Good Morning!! Wake up!";
+        morningImg[0].src = "./mrng.png"
+    }
+    else if(parseInt(morningTime[1].value) === hrs){
+        morningText.innerHTML = "Good Afternoon!! Have your Diet";
+        morningImg[0].src = "./mrng.png"
+    }
+    else if(parseInt(morningTime[2].value) === hrs){
+        morningText.innerHTML = "Good Evening!! Have Some Coffee"
+        morningImg[0].src = "./luch.png"
+    }
+    else if(parseInt(morningTime[3].value) === hrs){
+        morningText.innerHTML = "Good Night!! Sleep well"
+        morningImg[0].src = "./goodevening.png"
+    }
 
-  let morningtext1 = sel2.options[sel2.selectedIndex].textContent;
-  let morning1 = document.getElementById("chart2");
-  morning1.textContent = morningtext1;
-
-  let morningtext2 = sel3.options[sel3.selectedIndex].textContent;
-  let morning2 = document.getElementById("chart3");
-  morning2.textContent = morningtext2;
-
-  let morningtext3 = sel4.options[sel4.selectedIndex].textContent;
-  let morning3 = document.getElementById("chart4");
-  morning3.textContent = morningtext3;
-});
+}
