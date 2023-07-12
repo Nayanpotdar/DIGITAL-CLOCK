@@ -67,7 +67,7 @@ button{
   cursor: pointer;
 }
 .alarm{
-  width: 200px;
+  width: 150px;
   height: 75px;
 }
 .alarm:hover{
